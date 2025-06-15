@@ -1,0 +1,14 @@
+---
+import Form from "../components/Form.astro";
+import Title from "../components/Title.astro";
+import { colors } from "../constants/colors";
+import CenteredLayout from "../layouts/CenteredLayout.astro";
+import ImagedLayout from "../layouts/ImagedLayout.astro";
+---
+
+<ImagedLayout imageSrc='/secondImage.jpg'>
+	<CenteredLayout>
+		<Title color={colors.white}>Заповніть форму та отримайте консультацію</Title>
+		<Form />
+	</CenteredLayout>
+</ImagedLayout>

@@ -1,0 +1,22 @@
+---
+import Button from './Button.astro';
+import Input from './Input.astro';
+---
+
+<form class="form-box" onsubmit="event.preventDefault()">
+  <Input placeholder="ПІБ"/>
+  <Input placeholder="Номер телефону" type="tel"/>
+  <Input placeholder="Електронна адреса" type="email" />
+  <Button label="Надіслати" icon="/icons/telegram.svg" />
+</form>
+
+<style>
+  .form-box {
+    background-color: #fffaf5;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>

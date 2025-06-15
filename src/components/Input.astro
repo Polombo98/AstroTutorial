@@ -1,0 +1,56 @@
+---
+import {colors} from '../constants/colors'
+const { type = "text", placeholder = "" } = Astro.props;
+---
+
+<div class="form-field">
+	<input type={type} placeholder={placeholder} />
+  <span class="close-icon">✕</span>
+</div>
+
+<script>
+	  document.querySelectorAll("span.close-icon").forEach((element) => {
+			element.addEventListener("click", () => {
+				const input = element.previousElementSibling;
+				if (input && input.tagName === "INPUT") {
+					(input as HTMLInputElement).value = "";
+					(input as HTMLInputElement).focus();
+				}
+			});
+		});
+</script>
+
+<style define:vars={{borderColor: colors.main}}>
+  .form-field {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .form-field input {
+    width: 100%;
+    padding: 0.75rem 2rem 0.75rem 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: transparent;
+    outline: none;
+  }
+
+  .form-field input::placeholder {
+    color: #999;
+  }
+
+  .close-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #999;
+    cursor: pointer;
+  }
+
+  .form-field input:focus {
+    border-bottom-color: var(--borderColor)
+  }
+</style>

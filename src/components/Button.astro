@@ -1,9 +1,10 @@
 ---
 import {colors} from '../constants/colors'
-const { label = "Отримати Консультацію" } = Astro.props;
+const { label = "Отримати Консультацію", icon = '' } = Astro.props;
 ---
 
-<button >{label}</button>
+<button>{label}{icon && <img src={icon} alt="Telegram" class="icon" />}
+</button>
 
 <style define:vars={{buttonColor: colors.main, buttonHoverColor: colors.buttonHover, buttonActiveColor: colors.buttonActive, textColor: colors.white}}>
 	  button {
@@ -19,6 +20,9 @@ const { label = "Отримати Консультацію" } = Astro.props;
     overflow: hidden;
     z-index: 0;
     transition: color 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 	  button::before {
@@ -43,4 +47,10 @@ const { label = "Отримати Консультацію" } = Astro.props;
 	button:active::before {
 		display: none;
 	}
+
+  .icon {
+    margin-left: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 </style>
