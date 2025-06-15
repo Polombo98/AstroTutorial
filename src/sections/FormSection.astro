@@ -9,6 +9,15 @@ import ImagedLayout from "../layouts/ImagedLayout.astro";
 <ImagedLayout imageSrc='/secondImage.jpg'>
 	<CenteredLayout>
 		<Title color={colors.white}>Заповніть форму та отримайте консультацію</Title>
-		<Form />
+		<div class="form-wrapper">
+			<Form />
+		</div>
 	</CenteredLayout>
 </ImagedLayout>
+
+<style>
+	.form-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+</style>
