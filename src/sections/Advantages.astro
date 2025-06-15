@@ -1,0 +1,30 @@
+---
+import Advantage from "../components/Advantage.astro";
+import Title from "../components/Title.astro";
+import CenteredLayout from "../layouts/CenteredLayout.astro";
+
+const advantages = [
+	{icon: "/public/icons/home-work.svg", heading: 'Право на проживання та роботу в ЄС', text: 'Як громадянин Румунії, ви отримуєте право безперешкодно жити, працювати та навчатися в будь-якій з країн Європейського Союзу.'},
+	{icon: "/public/icons/travel.svg", heading: 'Безвізовий доступ до багатьох країн', text: 'Можливість подорожувати без візи до понад 170 країн, зокрема до США, Канади, Австралії та Японії.'},
+	{icon: "/public/icons/medicine.svg", heading: "Система охорони здоров'я ЄС", text: 'Ви отримаєте доступ до високоякісної медичної допомоги в межах ЄС через європейську медичну страховку.'},
+	{icon: "/public/icons/business.svg", heading: 'Економічні переваги', text: 'Доступ до великого ринку для бізнесу, можливості для інвестицій та ведення підприємницької діяльності.'},
+	{icon: "/public/icons/wallet.svg", heading: 'Пенсійні та соціальні виплати', text: 'Як громадянин Румунії, ви маєте право на участь у соціальній системі ЄС, зокрема на пенсійне забезпечення, допомогу по безробіттю та інші соціальні пільги.'},
+	{icon: "/public/icons/piggy-bank.svg", heading: 'Податкові переваги', text: 'Румунія має одну з найнижчих ставок податку на прибуток в ЄС, що може бути вигідно для підприємців та інвесторів.'},
+	{icon: "/public/icons/book.svg", heading: 'Освітні можливості', text: 'Як громадянин Румунії, ви можете навчатися в університетах ЄС на рівних умовах із місцевими громадянами, часто за нижчими тарифами, ніж для іноземців.'}
+]
+
+---
+<div class="advantages-wrapper">
+	<CenteredLayout>
+		<Title>Переваги румунського громадянства</Title>
+		<div>
+			{advantages.map(({heading, icon, text}) => <Advantage icon={icon} heading={heading} text={text}/>)}
+		</div>
+	</CenteredLayout>
+</div>
+
+<style>
+	.advantages-wrapper {
+		margin: 48px 0;
+	}
+</style>

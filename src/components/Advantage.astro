@@ -1,0 +1,34 @@
+---
+const {icon, heading, text} = Astro.props
+---
+
+<div class="advantage">
+	<img src={icon} alt={heading} class="advantage-icon" />
+	<div>
+		<h3 class="advantage-title">{heading}</h3>
+		<p class="advantage-text">{text}</p>
+	</div>
+</div>
+
+<style>
+	.advantage {
+    display: flex;
+  }
+
+  .advantage-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 24px;
+    object-fit: contain;
+  }
+
+	.advantage-title {
+		font-weight: 600;
+		max-width: 240px;
+		margin-bottom: 8px;
+	}
+
+	.advantage-text {
+		margin-bottom: 36px;
+	}
+</style>

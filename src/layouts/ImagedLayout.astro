@@ -1,0 +1,15 @@
+---
+const {imageSrc} = Astro.props
+---
+<div class="imaged-background">
+	<slot />
+</div>
+
+<style define:vars={{bgImage: `linear-gradient(rgba(0, 0, 0, 0.6)), url(${imageSrc});`}}>
+	.imaged-background {
+		background-image: var(--bgImage);
+		background-position: center;
+		min-height: 100vh;
+		padding-top: 30vh;
+	}
+</style>

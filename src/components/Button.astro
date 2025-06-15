@@ -1,0 +1,46 @@
+---
+import {colors} from '../constants/colors'
+const { label = "Отримати Консультацію" } = Astro.props;
+---
+
+<button >{label}</button>
+
+<style define:vars={{buttonColor: colors.main, buttonHoverColor: colors.buttonHover, buttonActiveColor: colors.buttonActive, textColor: colors.white}}>
+	  button {
+    position: relative;
+    background: var(--buttonColor);
+    color: var(--textColor);
+    font-size: 1rem;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    transition: color 0.3s ease-in-out;
+  }
+
+	  button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+		background: linear-gradient(to right, var(--buttonHoverColor) 0 100%, transparent 5% 100%);
+		border-radius: 9999px;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  button:hover::before {
+    transform: translateX(0);
+  }
+
+	button:active {
+		background: var(--buttonActiveColor);
+		transition: none;
+	}
+	button:active::before {
+		display: none;
+	}
+</style>

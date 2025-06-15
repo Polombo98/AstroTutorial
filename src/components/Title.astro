@@ -1,0 +1,27 @@
+---
+import { colors } from "../constants/colors"
+
+const {color = colors.black} = Astro.props
+
+---
+<h2 class="title">
+	<slot />
+</h2>
+
+<style define:vars={{mainColor: colors.main, titleColor: color}}>
+	.title {
+		font-size: 2rem;
+		color: var(--titleColor);
+		font-family: 'Anonymous Pro', monospace;
+		margin-bottom: 32px;
+	}
+	
+	.title::after {
+		content: "";
+		display: block;
+		width: 150px;
+		height: 3px;
+		margin-top: 8px;
+		background-color: var(--mainColor);
+	}
+</style>
