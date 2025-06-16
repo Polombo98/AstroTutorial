@@ -1,0 +1,33 @@
+---
+import {colors} from '../constants/colors'
+const {imgSrc, title} = Astro.props
+---
+
+<div class="cardWrapper">
+	<img src={imgSrc} alt={title}/>
+	<p>{title}</p>
+</div>
+
+<style define:vars={{white: colors.white, main: colors.main}}>
+	.cardWrapper {
+		background-color: var(--white);
+		width: 340px;
+		position: relative;
+		margin-bottom: 24px;
+		border-radius: 16px;
+		padding: 24px 16px;
+		display: flex;
+		gap: 16px;
+		overflow: hidden;
+	}
+	.cardWrapper::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 340px solid var(--main);
+    border-top: 34px solid transparent;
+	}
+</style>

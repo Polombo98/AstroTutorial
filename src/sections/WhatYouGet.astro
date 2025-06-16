@@ -1,0 +1,29 @@
+---
+import Card from "../components/Card.astro";
+import Title from "../components/Title.astro";
+import CenteredLayout from "../layouts/CenteredLayout.astro";
+
+
+---
+
+<div class="whatYouGet-wrapper">
+	<CenteredLayout>
+		<Title>Що ви отримаєте</Title>
+		<div class="cardsWrapper">
+			<Card imgSrc="/passport.png" title="Паспорт громадянина Румунії"/>
+			<Card imgSrc="/idCard.png" title="ID картка громадянина Румунії"/>
+		</div>
+	</CenteredLayout>
+</div>
+
+<style>
+	.whatYouGet-wrapper {
+		margin: 64px 0px;
+	}
+	.cardsWrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
